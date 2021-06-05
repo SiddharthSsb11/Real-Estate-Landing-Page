@@ -1,0 +1,74 @@
+.footer{
+    background-color:$color-secondary;
+    grid-column: full-start / full-end;
+    padding: 3.5rem;
+    
+    &__copyright{
+        font-size: 1.6;
+        color: white;
+        
+        width: 70%;
+        text-align: center;
+        padding: 1rem;
+        margin: 2rem auto 0 auto; /*centering*/
+    }
+
+    &__owner:link, &__owner:visited{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        color: white;
+        text-align: center;
+        padding: .7rem;
+        display: inline-block;
+        transition: all .2s;
+    }
+
+    &__owner:hover,
+    &__owner:active {
+        background-color: rgba(#fff, .05);
+        transform: translateY(-3px);
+        //font-weight: bold;
+    }
+    
+}
+
+.nav{
+    //padding: 2rem;
+
+    &__items{
+        list-style: none;
+        display: grid;
+        padding: 2.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        grid-gap: 2rem;
+        align-items: center;
+        justify-items: center;
+
+        @media only screen and (max-width: $bp-lg){
+            grid-gap: 1.4rem;
+            padding: 1.8rem;
+        }
+    }
+
+    &__link:link, &__link:visited{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        color: white;
+        text-align: center;
+        padding: 1.5rem;
+        display: inline-block;
+        transition: all .2s;
+        @media only screen and (max-width: $bp-lg){
+            padding: 1.1rem;
+        }
+    }
+
+    &__link:hover,
+    &__link:active {
+        background-color: rgba(#fff, .05);
+        transform: translateY(-3px);
+        font-weight: bold;
+    } 
+}

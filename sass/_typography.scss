@@ -1,0 +1,70 @@
+%heading{
+    font-family: $font-display;
+    font-weight: 400;
+}
+
+.heading-1{
+    @extend %heading; /*directive lets you share a set of css prop from one selector to another */
+    /*usefull in identically styled elements that only differ in some small details*/
+    color:white;
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.heading-2{
+    @extend %heading;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 4rem;
+    line-height: 1.1;
+    &--dark{
+        color: $color-grey-dark-1;
+    }
+}
+
+.heading-3{
+    @extend %heading;
+    font-size: 1.8rem;
+    text-transform: uppercase ;
+    &--light{
+        color: $color-primary;
+    }
+}
+
+.heading-4{
+    @extend %heading;
+    font-size: 2.05rem;
+
+    &--q{
+        align-self: center;
+    }
+    
+    &--dark{
+        color: $color-grey-dark-1;
+    }
+}
+
+.mb-sm{margin-bottom: 2rem;}
+.mb-md{margin-bottom: 3rem;}
+.mb-lg{margin-bottom: 4rem;}
+.mb-hg{margin-bottom: 8rem;}
+.fb{font-weight: bold;}
+
+.btn{
+    background-color: $color-primary;
+    border: none;
+    cursor: pointer;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
+    //border-radius: 3px;
+    transition: all .2s;
+    overflow: hidden;
+  
+
+    &:hover{
+        background-color: $color-primary-dark;
+        font-weight: bold;
+    }
+}

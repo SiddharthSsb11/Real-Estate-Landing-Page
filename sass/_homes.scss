@@ -1,0 +1,85 @@
+.homes{
+    background-color: white;
+    grid-column: center-start / center-end;
+
+    display: grid; //grid level 2 -- grid item for container and a grid container for feature div
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 6.9rem;
+    margin: 12rem 0;
+}
+
+.home{
+    display: grid; /* level 3rd grid */
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3.3rem;
+    background-color: $color-grey-light-1;
+    box-shadow: $shadow-med;
+
+    &__img{
+        width: 100%;
+        grid-column: 1/-1;
+        grid-row: 1/2;
+    }
+
+    &__like{
+        height: 2.7rem;
+        width: 2.7rem;
+        fill: $color-primary;
+        cursor: pointer;
+        transition: all .2s;
+
+        grid-column: 2/3;
+        grid-row: 1/2;
+        justify-self: end;
+        margin: 1rem;
+
+        &:hover, &--active{
+            fill: #eb2f64;
+        }
+
+    }
+
+    &__location, &__room{
+        margin-top: 2rem; //fgc
+    }
+
+    &__location, &__room,
+    &__area, &__price{
+
+        font-size: 1.6rem;
+        margin-left: 2.7rem; //fgc
+
+        display: flex;  /* to align icin and para inside flex containers */
+        //justify-content: center;
+        align-items: center;
+        gap: 1.1rem; /* creates a gap btw the items on each side -- diff than margins */ 
+
+
+        svg{
+            height: 2rem;
+            width: 2rem;
+            fill: $color-primary-dark;
+            font-weight: 700;
+        }
+    }
+
+    &__btn{
+        grid-column: 1/-1;
+        letter-spacing: 1.5px;
+    }
+
+    &__name{
+        color: white;
+        font-size: 1.7rem;
+        padding: 1.1rem 1.8rem;
+        font-family: $font-display;
+        text-align: center;
+        background-color: $color-secondary;
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        justify-self: center;
+        align-self: end;
+        width: 80%;
+        transform: translateY(50%); 
+    }
+}

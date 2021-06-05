@@ -1,0 +1,64 @@
+.header{
+    background-image: linear-gradient(rgba($color-secondary, 0.93), rgba($color-secondary, 0.93)), url(../img/hero.jpeg);
+    background-size: cover;
+    background-position: center;
+    grid-column: full-start / col-end 6 ;
+    padding: 6.4rem;
+    padding-top: 4.2rem ;
+
+    @media only screen and (max-width: $bp-med){
+        grid-column: 1/-1;
+        grid-row: 2/3;
+    }
+
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(5.6rem, min-content) 1fr; /*1fr for 1st and 4th ro because we needed space belowthem*/
+    //minmax to increase the respomsiveness
+    grid-gap: 1.4rem ;
+    grid-template-columns: minmax(min-content, max-content);
+    justify-content: center;
+
+    &__logo{
+        height: 3.6rem;
+        justify-self: center;
+    }
+
+    &__btn{
+        align-self: start;
+        justify-self: start;
+    }
+
+    &__seenon-text{
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $color-grey-light-2;
+        display: grid; /*just like only text(seen on)inside it can be used as a flex item and also its pseudo elements too*/
+        grid-template-columns: 1fr max-content 1fr;
+        column-gap: 1rem;
+        align-items: center;
+
+        &::before,&::after{
+            height: 1.5px;
+            content: "";
+            display: inline-block;
+            background-color: currentcolor;
+        }
+    }
+
+    &__seenon-logo{
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 1.8rem;
+        align-items: center;
+        justify-items: center;
+        align-items: center; /*resposniveness during starting breakpoint*/
+        margin-top: 1rem;
+
+        img{
+            max-height: 2.4rem;
+            max-width: 100%;
+            filter: brightness(70%); //100% is default--to make it darker go below 100
+        }
+    }
+}

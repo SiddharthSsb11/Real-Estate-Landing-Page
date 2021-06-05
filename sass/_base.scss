@@ -1,0 +1,64 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+$color-t-l: #2998ff;
+$color-t-d: #5643fa;
+
+$shadow-med: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+//media query breakpoints
+$bp-largest: 75em; //1200px/16px
+$bp-lg: 60em; //960px/16px 
+$bp-med: 54.6875em; // 875px/16px
+
+
+*, *::after, *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%; /*defining what 1rem is for us in our project but by default font-size is 16px
+    1 rem = 10px, 10px/16px = 62.5%*/
+    box-sizing: border-box;
+
+    @media only screen and (max-width: $bp-largest){
+        font-size: 50%;
+    }
+}   
+
+body{
+    font-family: $font-primary;
+    font-weight: 300;
+    color: $color-grey-dark-2;
+    line-height: 1.6;
+}
+  
+.container{
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    @media only screen and (max-width: $bp-lg){
+        grid-template-rows: minmax(5.6rem, min-content) 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns:  [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width: $bp-med){
+        grid-template-rows: minmax(5.6rem, min-content) calc(100vh - 3.6rem);
+    }
+}

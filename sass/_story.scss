@@ -1,0 +1,87 @@
+.story{
+
+    &__img{
+        grid-column: full-start / col-end 4 ;
+        display: grid;
+        background-image: linear-gradient(to right bottom, rgba($color-primary, 0.5), rgba($color-primary, 0.5)), url(../img/back.jpg);
+        background-position:  center;
+        background-size: cover;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        align-items: center; //to centralize the items inside their cell area
+        
+        @media only screen and (max-width: $bp-med){
+            grid-column: 1/-1;
+            padding: 7rem;
+        }
+    }
+
+    &__pic--1{
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2)1;
+        width: 100%;
+        grid-column: 2/6;
+        grid-row: 2/6;
+
+        @media only screen and (max-width: $bp-med){
+            grid-column: 1/5;
+            grid-row: 1/-1;
+            width: 90%;
+        }
+    }
+    
+    &__pic--2{
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+        width: 116%; //to move out of the cell area
+        //height: 112%; //height width gien because bg-img inclded not from html
+        grid-row: 4/6;
+        grid-column: 4/7;
+        z-index: 100;
+        
+        //align-self: end ;
+        /*background-position:  center;
+        background-size: cover; /*for a bg img to fit in completely--obect fit for the parent div in which img is via html */
+        /*background-blend-mode: color-burn;
+        background-image: linear-gradient(to right bottom, rgba($color-t-l, 0.75), rgba($color-t-d, 0.75)), url(../img/story-2.jpeg);*/
+        
+        @media only screen and (max-width: $bp-med){
+            width: 90%;
+            //height: 100;
+            grid-row: 1/-1;
+        }
+    }
+
+    /*&__photo{
+
+        outline-offset: 2rem;
+        transition: all 0.2s;
+
+        &:hover{
+            transform: scale(0.9);
+            outline: solid 1rem $color-secondary ;
+            box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.3);
+            z-index: 200;      
+        }
+    }*/
+
+    &__text{
+        background-color: $color-grey-light-1;
+        grid-column: col-start 5 / full-end ;
+        display: grid;
+        padding: 5.6rem 8vw;
+        align-content: center;
+
+        
+        @media only screen and (max-width: $bp-med){
+            grid-column: 1/-1;
+            grid-row: 5/6;
+        }
+
+        & > * {
+            justify-self: start;
+        }
+    }    
+    &__para{
+        font-size: 1.5rem;
+        font-style: italic;
+    }    
+}
